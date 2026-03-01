@@ -1,7 +1,7 @@
 class chatbot:
-    def __init__(self,name,password):
-        self.name = name
-        self.password = password
+    def __init__(self):
+        self.name = 'admin'
+        self.password = '123456'
         self.manu()
 
     def manu(self):
@@ -48,4 +48,4 @@ class chatbot:
             print("Name not found. Please try again.")
             self.manu()
 
-obj=chatbot("Admin","123456")
+obj=chatbot()
