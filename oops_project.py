@@ -1,9 +1,23 @@
 class chatbot:
+    __user_id=0 #class variable 
+
     def __init__(self):
+        self.id=chatbot.__user_id+1
+        chatbot.__user_id=self.id
+        self.__username="adi" #hidden attribute
         self.name = 'admin'
         self.password = '123456'
         self.manu()
 
+    @staticmethod
+    def get_user_id():
+        return chatbot.__user_id
+    
+    @staticmethod
+    def set_user_id(user_id):
+        chatbot.__user_id = user_id 
+        return chatbot.__user_id
+    
     def manu(self):
         user_input = input("""Welcome to the chatbot! Please select an option:
 1. sign up
@@ -49,3 +63,4 @@ class chatbot:
             self.manu()
 
 obj=chatbot()
+print("User ID:", obj.id)   
